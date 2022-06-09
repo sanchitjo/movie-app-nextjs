@@ -8,7 +8,6 @@ const MovieList = ({ movies }) => {
     return (
         <>
             <Container>
-
                 {
                     movies?.map((movie) => {
                         console.log(movies)

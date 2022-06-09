@@ -7,28 +7,28 @@ const Navbar = () => {
             <SearchBar placeholder="movies here.." />
             <ul>
                 <li>
-                    <Link href='/'>
+                    <Link href='/movies'>
                         <a><h3>Home</h3></a>
                     </Link>
                 </li>
                 <li>
-                    <Link href='/latest'>
-                        <a><h3>Latest</h3></a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href='/nowplaying'>
+                    <Link href='/movies/nowplaying'>
                         <a><h3>Now Playing</h3></a>
                     </Link>
                 </li>
                 <li>
-                    <Link href='/upcoming'>
+                    <Link href='/movies/upcoming'>
                         <a><h3>Upcoming</h3></a>
                     </Link>
                 </li>          
                 <li>
-                    <Link href='/toprated'>
+                    <Link href='/movies/toprated'>
                         <a><h3>Top Rated</h3></a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/actors'>
+                        <a><h3>Actors</h3></a>
                     </Link>
                 </li>
             </ul>
