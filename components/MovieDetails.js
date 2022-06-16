@@ -1,8 +1,8 @@
 
-const MovieDetails = ({movie}) => {
-  return (
-    <div>{movie.title}</div>
-  )
-}
+// const MovieDetails = ({movie}) => {
+//   return (
+//     <div>{movie.title}</div>
+//   )
+// }
 
-export default MovieDetails
+// export default MovieDetails

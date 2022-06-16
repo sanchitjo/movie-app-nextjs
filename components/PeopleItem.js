@@ -1,14 +1,25 @@
 import { MovieImg } from "./styles/CardsStyle"
+import Link from 'next/link'
+import { EMPTY_PERSON_URL, IMAGE_URL } from '../config';
+import { MovieCard } from "./styles/MovieCard";
 
 
-const PeopleItem = ({act}) => {
+const PeopleItem = ({ act }) => {
   return (
     <>
-        
-        <MovieImg src={`https://image.tmdb.org/t/p/w500/${act.profile_path}`} alt='actor-img'/>
+      <MovieCard>
+        <Link href={`/actors/${act.id}`}>
+          <MovieImg 
+          src={
+            act?.profile_path
+              ? `${IMAGE_URL}${act?.profile_path}`
+              : `${EMPTY_PERSON_URL}`
+          }
+            alt='actor-img' />
+        </Link>
         <h4>{act?.name}</h4>
-        
-        </>
+      </MovieCard>
+    </>
   )
 }
 

@@ -1,15 +1,16 @@
 import axios from 'axios';
+import Meta from '../../components/Meta';
 import MovieList from '../../components/MovieList';
 
 
-const popular = ({ popularMovies }) => {
-  
-  const { results } = popularMovies;
+const popular = ({ movies }) => {
+
+  // const { results } = popularMovies;
 
   return (
     <>
-      <h1>Popular Movies</h1>
-      <MovieList movies={results} />
+      <Meta />
+      <MovieList movies={movies} />
     </>
   );
 };
@@ -17,13 +18,13 @@ const popular = ({ popularMovies }) => {
 export const getServerSideProps = async ({ query }) => {
   const page = query.page || 1;
 
-  const { data: popularMovies } = await axios.get(
+  const { data: movies } = await axios.get(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=${page}`
   );
 
   return {
     props: {
-      popularMovies,
+      movies,
     },
   };
 };

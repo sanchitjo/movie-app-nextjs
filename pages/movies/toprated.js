@@ -1,22 +1,24 @@
 import axios from "axios"
+import Meta from "../../components/Meta";
 import MovieList from "../../components/MovieList";
 
 
 
 const toprated = ({ movies }) => {
   return (
-    
-      <MovieList movies={movies.results} />
-    
+    <>
+    <Meta />
+      <MovieList movies={movies} />
+      </>
   )
 }
 
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({query}) => {
+  const page = query.page || 1;
   
-
   const { data: movies } = await axios.get(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=${page}`
   );
 
   return {

@@ -1,24 +1,29 @@
+import Pagination from './Pagination'
 import PeopleItem from './PeopleItem'
-import { Container } from './styles/CardsStyle'
-    
+import { CardWrapper, Container } from './styles/CardsStyle'
+
 const PeopleList = ({ actor }) => {
-    console.log('actor', actor)
+    // console.log('actor', actor)
     return (
         <>
+        <CardWrapper>
             <Container>
 
                 {
-                    actor?.map((act) => {
+                    actor.results?.map((act) => {
                         console.log(act)
                         return (
                             <PeopleItem key={act.id} act={act} />
                         )
                     })
                 }
+                
             </Container>
+            <Pagination content={actor} />
+            </CardWrapper>
         </>
     )
 }
-  
+
 
 export default PeopleList
