@@ -8,8 +8,6 @@ color: black;
 padding: 3em;
 width: 95vw;
 
-  
-
   .movie-data {
     display: flex;
     flex-direction: row;
@@ -59,9 +57,21 @@ width: 95vw;
       flex-wrap: wrap;
     }
   }
+
+  @media only screen and (max-width: 450px) {
+    .movie-data {
+    display: flex;
+    flex-direction: column;
+  }
+  }
 `;
 
 export const MovieImage = styled.img`
     height: 500px;
     width: 400px;
+
+    @media only screen and (max-width: 450px) {
+      height: 350px;
+    width: 250px;
+  }
 `
