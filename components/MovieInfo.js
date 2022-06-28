@@ -1,6 +1,7 @@
 import { MovieImage, MovieInfoStyles } from "./styles/MovieInfoStyle"
 import { IMAGE_URL, EMPTY_PERSON_URL } from '../config';
 import Link from 'next/link'
+import Image from 'next/image'
 
 const MovieInfo = ({ movieData, topCast, recommendationsData }) => {
     return (
@@ -35,7 +36,7 @@ const MovieInfo = ({ movieData, topCast, recommendationsData }) => {
                         {topCast.map((cast) => (
                             <Link key={cast?.id} href={`/actors/${cast.id}/`}>
                                 <div className="actors" key={cast?.id}>
-                                    <img
+                                    <Image
                                         src={
                                             cast?.profile_path
                                                 ? `${IMAGE_URL}${cast?.profile_path}`
@@ -60,7 +61,7 @@ const MovieInfo = ({ movieData, topCast, recommendationsData }) => {
                                     key={recommendation?.id}
                                 >
                                     <div className="recMovie-item">
-                                        <img
+                                        <Image
                                             src={`${IMAGE_URL}${recommendation?.poster_path}`}
                                             alt={recommendation?.title}
                                         />

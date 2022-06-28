@@ -5,8 +5,6 @@ import MovieList from '../../components/MovieList';
 
 const popular = ({ movies }) => {
 
-  // const { results } = popularMovies;
-
   return (
     <>
       <Meta />
