@@ -13,7 +13,7 @@ const MovieList = ({ movies }) => {
                 {/* <MovieSearchStyle></MovieSearchStyle> */}
                 <Container>
                     {
-                        movies.results?.map((movie) => {
+                        movies?.results?.map((movie) => {
                             console.log(movies)
                             return (
                                 <MovieItem key={movie.id} movie={movie} />
