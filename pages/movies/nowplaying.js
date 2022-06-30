@@ -7,14 +7,14 @@ import MovieList from "../../components/MovieList";
 const nowPlaying = ({ movies }) => {
   return (
     <>
-    <Meta />
+      <Meta />
       <MovieList movies={movies} />
-      </>
+    </>
   )
 }
 
 
-export const getServerSideProps = async ({query}) => {
+export const getServerSideProps = async ({ query }) => {
   const page = query.page || 1;
 
   const { data: movies } = await axios.get(
