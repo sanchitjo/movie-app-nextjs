@@ -1,7 +1,7 @@
 import MovieItem from './MovieItem'
 import Pagination from './Pagination'
 import { CardWrapper, Container } from './styles/CardsStyle'
-import { MovieSearchStyle } from './styles/MovieSearchStyle'
+
 
 
 const MovieList = ({ movies }) => {

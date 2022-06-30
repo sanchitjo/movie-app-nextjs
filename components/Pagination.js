@@ -9,7 +9,7 @@ const Pagination = ({ content }) => {
   const paginationHandler = (page) => {
     const currentPath = router.pathname;
     const currentQuery = router.query;
-    currentQuery.page = page.selected + 1;
+    currentQuery.page = page.selected;
 
     router.push({
       pathname: currentPath,
@@ -27,7 +27,7 @@ const Pagination = ({ content }) => {
         activeClassName={'active'}
         containerClassName={'pagination'}
         subContainerClassName={'pages pagination'}
-        initialPage={content.page}
+        initialPage={content?.page}
         pageCount={10}
         marginPagesDisplayed={3}
         pageRangeDisplayed={4}
